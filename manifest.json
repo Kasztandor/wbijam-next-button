@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Wbijam przycisk \"następny\"",
+  "version": "1.0",
+
+  "description": "Dodaje przycisk następny w podstronach player na wbijam.pl",
+
+  "icons": {
+    "48": "img/logo.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.wbijam.pl/odtwarzacz-*"],
+      "js": ["script.js"]
+    }
+  ]
+
+}
