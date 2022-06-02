@@ -9,7 +9,7 @@ function getSourceAsDOM(url)
 var upperSide = -1;
 //var nextEpisodeSide = -1;
 var hyperlink = -1;
-var toAppend = "";
+var appender = "";
 
 for (i of document.getElementsByTagName("a")){
 	if (i.innerHTML.includes("wstecz")){
@@ -20,8 +20,8 @@ for (i of document.getElementsByTagName("a")){
 if (upperSide != -1){
 	for (i of upperSide.getElementsByTagName("a")){
 		if (i.innerHTML.includes("NASTĘPNY")){
-			hyperlink = i.href;
 			//nextEpisodeSide = getSourceAsDOM(i.href);
+			hyperlink = i.href;
 			break;
 		}
 	}
@@ -38,13 +38,13 @@ if (upperSide != -1){
 	}*/
 }
 if (hyperlink != -1){
-	toAppend = '<a href="'+hyperlink+'">następny ---></a>'
+	appender = '<a href="'+hyperlink+'">następny ---></a>'
 }
 else{
-	toAppend = "To ostatni odcinek :(";
+	appender = "To ostatni odcinek :(";
 }
 for (i of document.getElementsByTagName("a")){
 	if (i.innerHTML.includes("wstecz")){
-		i.parentElement.innerHTML += toAppend;
+		i.parentElement.innerHTML += appender;
 	}
 }
